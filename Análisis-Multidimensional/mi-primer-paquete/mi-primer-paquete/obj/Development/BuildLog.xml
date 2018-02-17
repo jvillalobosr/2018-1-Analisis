@@ -2,33 +2,38 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>mi-primer-paquete</Name>
-    <LastWriteTime>2018-02-03T01:06:32.524119Z</LastWriteTime>
+    <LastWriteTime>2018-02-17T00:23:50.4235904Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>mi-primer-hello-world.dtsx</Name>
-      <LastWriteTime>2018-01-26T22:47:46Z</LastWriteTime>
+      <LastWriteTime>2018-02-03T00:13:40Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>flow-control-example.dtsx</Name>
-      <LastWriteTime>2018-01-26T22:47:46Z</LastWriteTime>
+      <LastWriteTime>2018-02-03T00:13:40Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>grade-control.dtsx</Name>
-      <LastWriteTime>2018-01-26T22:47:46Z</LastWriteTime>
+      <LastWriteTime>2018-02-03T00:13:40Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>flow-control-error-example.dtsx</Name>
-      <LastWriteTime>2018-01-26T22:47:46Z</LastWriteTime>
+      <LastWriteTime>2018-02-03T00:13:40Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>mi-primer-sql-task.dtsx</Name>
       <LastWriteTime>2018-02-03T01:47:04.6374092Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>mi-primer-foreach.dtsx</Name>
+      <LastWriteTime>2018-02-17T01:25:14.1680003Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
