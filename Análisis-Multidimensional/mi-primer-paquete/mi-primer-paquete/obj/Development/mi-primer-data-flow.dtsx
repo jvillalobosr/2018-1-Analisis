@@ -1,0 +1,1474 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/2/2018 7:32:44 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LAB9-12"
+  DTS:CreatorName="ULATINA0\laboratorio"
+  DTS:DTSID="{3BBB5A07-53DE-4472-B61E-E0DD7F7C1DE8}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.68"
+  DTS:LocaleID="5130"
+  DTS:ObjectName="mi-primer-data-flow"
+  DTS:PackageType="5"
+  DTS:VersionBuild="13"
+  DTS:VersionGUID="{9483B68F-FE58-443E-A204-00C9196ADEEA}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.AdventureWorks2012]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{23A7A54D-B21F-47E8-AFF7-E5B7B177892F}"
+      DTS:ObjectName="LocalHost.AdventureWorks2012">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=.;Initial Catalog=AdventureWorks2012;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Mi archivo 1]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{44A2427E-4BA4-48D9-AC6A-4EDC74DC8ECC}"
+      DTS:ObjectName="Mi archivo 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="5130"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\Temp\archivo-1.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="2"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PersonType"
+              DTS:DTSID="{CEF752B2-A256-4089-BEDD-D1467A0FE502}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NombreAnsi"
+              DTS:DTSID="{31330176-B314-486F-BFB9-2A01BCCDD6F7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ApellidoAnsi"
+              DTS:DTSID="{E6161A3C-A1B1-487C-88C9-FBF90AADDBED}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="InicialDelApellido"
+              DTS:DTSID="{04B6C8B1-AAD6-4B02-B887-9CCB4138D8EC}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Mi archivo 2]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{96779B75-4615-4275-836B-68BEBC06316C}"
+      DTS:ObjectName="Mi archivo 2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="5130"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\Temp\archivo-2.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="2"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PersonType"
+              DTS:DTSID="{E487B7B3-315C-4135-8FF0-0D4FE2F16001}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NombreAnsi"
+              DTS:DTSID="{8B02D92C-8F88-467F-907B-879E7541CF41}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ApellidoAnsi"
+              DTS:DTSID="{4F22D334-20FC-49AB-AB02-5D13E16D47E3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="InicialDelApellido"
+              DTS:DTSID="{781764A0-0FB4-47E7-8147-45BD611AE582}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Mi archivo 3]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{C937CEAA-ACC3-4D42-B245-DC891F611D60}"
+      DTS:ObjectName="Mi archivo 3">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="5130"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\Temp\archivo-3.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="2"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PersonType"
+              DTS:DTSID="{A53FE1DD-12D3-4867-8A0C-202418ACBB73}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Name"
+              DTS:DTSID="{83826417-5DDC-43DF-B5A4-D579A9FBECE1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LastName"
+              DTS:DTSID="{E5FA4F30-82BF-4275-9397-3687715A7628}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NombreAnsi"
+              DTS:DTSID="{B47F7263-5D33-4F40-984D-EA61C641C8D5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ApellidoAnsi"
+              DTS:DTSID="{FBD4A56E-B5C2-428F-B594-246DF42ADF58}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="InicialDelApellido"
+              DTS:DTSID="{56D6BA00-0A07-4A86-B79E-95061DB09B26}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{448E3C24-E452-43EF-B4BC-F3A753E288B6}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="miFinalSegundoQuiebre">
+      <DTS:VariableValue
+        DTS:DataType="8">R</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{462A24C0-44AB-4784-9768-6968F2BA1DD8}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="miFinalTercerQuiebre">
+      <DTS:VariableValue
+        DTS:DataType="8">Z</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{152B5DB1-4EA7-45D2-BC03-637F68C25883}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="miIinicioTercerQuiebre">
+      <DTS:VariableValue
+        DTS:DataType="8">S</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F1A9195D-6511-4ED6-99C1-FF187F9EA260}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="miInicioSegundoQuiere">
+      <DTS:VariableValue
+        DTS:DataType="8">G</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{BC403755-2665-44A1-93F0-A9B2D4CBB557}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="miPrimerQuiebre">
+      <DTS:VariableValue
+        DTS:DataType="8">F</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{3D35FD62-04E1-49A6-84A0-A69F94AB4704}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="miTipoDePersona">
+      <DTS:VariableValue
+        DTS:DataType="8">IN</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A71CD96E-33C2-4594-ACDC-95B040D9386F}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="TotalArchivo1">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\lea los registros de bd y páselos a archivos"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:DTSID="{CCE4806E-AB91-4FF1-B5BF-DBB024661FEA}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="lea los registros de bd y páselos a archivos"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\lea los registros de bd y páselos a archivos\Archivo 1"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Destino de archivo plano;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Destino de archivo plano"
+              localeId="5130"
+              name="Archivo 1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si los datos sobrescriben el archivo de destino o se anexan al mismo."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Especifica el texto para escribir en el archivo de destino antes de escribir ningún dato."
+                  expressionType="Notify"
+                  name="Header" />
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\lea los registros de bd y páselos a archivos\Archivo 1.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Mi archivo 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[Mi archivo 1]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\lea los registros de bd y páselos a archivos\Archivo 1.Inputs[Entrada de destino de archivo plano]"
+                  hasSideEffects="true"
+                  name="Entrada de destino de archivo plano">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\lea los registros de bd y páselos a archivos\Archivo 1.Inputs[Entrada de destino de archivo plano].Columns[PersonType]"
+                      cachedDataType="wstr"
+                      cachedLength="2"
+                      cachedName="PersonType"
+                      externalMetadataColumnId="Package\lea los registros de bd y páselos a archivos\Archivo 1.Inputs[Entrada de destino de archivo plano].ExternalColumns[PersonType]"
+                      lineageId="Package\lea los registros de bd y páselos a archivos\Lea las personas.Outputs[Salida de origen de OLE DB].Columns[PersonType]" />
+                    <inputColumn
+                      refId="Package\lea los registros de bd y páselos a archivos\Archivo 1.Inputs[Entrada de destino de archivo plano].Columns[NombreAnsi]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="NombreAnsi"
+                      externalMetadataColumnId="Package\lea los registros de bd y páselos a archivos\Archivo 1.Inputs[Entrada de destino de archivo plano].ExternalColumns[NombreAnsi]"
+                      lineageId="Package\lea los registros de bd y páselos a archivos\Pasar el nombre y el apellido a mayúsculas.Outputs[Salida de columna derivada].Columns[NombreAnsi]" />
+                    <inputColumn
+                      refId="Package\lea los registros de bd y páselos a archivos\Archivo 1.Inputs[Entrada de destino de archivo plano].Columns[ApellidoAnsi]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ApellidoAnsi"
+                      externalMetadataColumnId="Package\lea los registros de bd y páselos a archivos\Archivo 1.Inputs[Entrada de destino de archivo plano].ExternalColumns[ApellidoAnsi]"
+                      lineageId="Package\lea los registros de bd y páselos a archivos\Pasar el nombre y el apellido a mayúsculas.Outputs[Salida de columna derivada].Columns[ApellidoAnsi]" />
+                    <inputColumn
+                      refId="Package\lea los registros de bd y páselos a archivos\Archivo 1.Inputs[Entrada de destino de archivo plano].Columns[InicialDelApellido]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="InicialDelApellido"
+                      externalMetadataColumnId="Package\lea los registros de bd y páselos a archivos\Archivo 1.Inputs[Entrada de destino de archivo plano].ExternalColumns[InicialDelApellido]"
+                      lineageId="Package\lea los registros de bd y páselos a archivos\Obtenga la inicial del apellido.Outputs[Salida de columna derivada].Columns[InicialDelApellido]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\lea los registros de bd y páselos a archivos\Archivo 1.Inputs[Entrada de destino de archivo plano].ExternalColumns[PersonType]"
+                      dataType="wstr"
+                      length="2"
+                      name="PersonType" />
+                    <externalMetadataColumn
+                      refId="Package\lea los registros de bd y páselos a archivos\Archivo 1.Inputs[Entrada de destino de archivo plano].ExternalColumns[NombreAnsi]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="NombreAnsi" />
+                    <externalMetadataColumn
+                      refId="Package\lea los registros de bd y páselos a archivos\Archivo 1.Inputs[Entrada de destino de archivo plano].ExternalColumns[ApellidoAnsi]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ApellidoAnsi" />
+                    <externalMetadataColumn
+                      refId="Package\lea los registros de bd y páselos a archivos\Archivo 1.Inputs[Entrada de destino de archivo plano].ExternalColumns[InicialDelApellido]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="InicialDelApellido" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\lea los registros de bd y páselos a archivos\Archivo 2"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Destino de archivo plano;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Destino de archivo plano"
+              localeId="5130"
+              name="Archivo 2">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si los datos sobrescriben el archivo de destino o se anexan al mismo."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Especifica el texto para escribir en el archivo de destino antes de escribir ningún dato."
+                  expressionType="Notify"
+                  name="Header" />
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\lea los registros de bd y páselos a archivos\Archivo 2.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Mi archivo 2]"
+                  connectionManagerRefId="Package.ConnectionManagers[Mi archivo 2]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\lea los registros de bd y páselos a archivos\Archivo 2.Inputs[Entrada de destino de archivo plano]"
+                  hasSideEffects="true"
+                  name="Entrada de destino de archivo plano">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\lea los registros de bd y páselos a archivos\Archivo 2.Inputs[Entrada de destino de archivo plano].Columns[PersonType]"
+                      cachedDataType="wstr"
+                      cachedLength="2"
+                      cachedName="PersonType"
+                      externalMetadataColumnId="Package\lea los registros de bd y páselos a archivos\Archivo 2.Inputs[Entrada de destino de archivo plano].ExternalColumns[PersonType]"
+                      lineageId="Package\lea los registros de bd y páselos a archivos\Lea las personas.Outputs[Salida de origen de OLE DB].Columns[PersonType]" />
+                    <inputColumn
+                      refId="Package\lea los registros de bd y páselos a archivos\Archivo 2.Inputs[Entrada de destino de archivo plano].Columns[NombreAnsi]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="NombreAnsi"
+                      externalMetadataColumnId="Package\lea los registros de bd y páselos a archivos\Archivo 2.Inputs[Entrada de destino de archivo plano].ExternalColumns[NombreAnsi]"
+                      lineageId="Package\lea los registros de bd y páselos a archivos\Pasar el nombre y el apellido a mayúsculas.Outputs[Salida de columna derivada].Columns[NombreAnsi]" />
+                    <inputColumn
+                      refId="Package\lea los registros de bd y páselos a archivos\Archivo 2.Inputs[Entrada de destino de archivo plano].Columns[ApellidoAnsi]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ApellidoAnsi"
+                      externalMetadataColumnId="Package\lea los registros de bd y páselos a archivos\Archivo 2.Inputs[Entrada de destino de archivo plano].ExternalColumns[ApellidoAnsi]"
+                      lineageId="Package\lea los registros de bd y páselos a archivos\Pasar el nombre y el apellido a mayúsculas.Outputs[Salida de columna derivada].Columns[ApellidoAnsi]" />
+                    <inputColumn
+                      refId="Package\lea los registros de bd y páselos a archivos\Archivo 2.Inputs[Entrada de destino de archivo plano].Columns[InicialDelApellido]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="InicialDelApellido"
+                      externalMetadataColumnId="Package\lea los registros de bd y páselos a archivos\Archivo 2.Inputs[Entrada de destino de archivo plano].ExternalColumns[InicialDelApellido]"
+                      lineageId="Package\lea los registros de bd y páselos a archivos\Obtenga la inicial del apellido.Outputs[Salida de columna derivada].Columns[InicialDelApellido]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\lea los registros de bd y páselos a archivos\Archivo 2.Inputs[Entrada de destino de archivo plano].ExternalColumns[PersonType]"
+                      dataType="wstr"
+                      length="2"
+                      name="PersonType" />
+                    <externalMetadataColumn
+                      refId="Package\lea los registros de bd y páselos a archivos\Archivo 2.Inputs[Entrada de destino de archivo plano].ExternalColumns[NombreAnsi]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="NombreAnsi" />
+                    <externalMetadataColumn
+                      refId="Package\lea los registros de bd y páselos a archivos\Archivo 2.Inputs[Entrada de destino de archivo plano].ExternalColumns[ApellidoAnsi]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ApellidoAnsi" />
+                    <externalMetadataColumn
+                      refId="Package\lea los registros de bd y páselos a archivos\Archivo 2.Inputs[Entrada de destino de archivo plano].ExternalColumns[InicialDelApellido]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="InicialDelApellido" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\lea los registros de bd y páselos a archivos\Archivo 3"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Destino de archivo plano;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Destino de archivo plano"
+              localeId="5130"
+              name="Archivo 3">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si los datos sobrescriben el archivo de destino o se anexan al mismo."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Especifica el texto para escribir en el archivo de destino antes de escribir ningún dato."
+                  expressionType="Notify"
+                  name="Header" />
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\lea los registros de bd y páselos a archivos\Archivo 3.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Mi archivo 3]"
+                  connectionManagerRefId="Package.ConnectionManagers[Mi archivo 3]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\lea los registros de bd y páselos a archivos\Archivo 3.Inputs[Entrada de destino de archivo plano]"
+                  hasSideEffects="true"
+                  name="Entrada de destino de archivo plano">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\lea los registros de bd y páselos a archivos\Archivo 3.Inputs[Entrada de destino de archivo plano].Columns[PersonType]"
+                      cachedDataType="wstr"
+                      cachedLength="2"
+                      cachedName="PersonType"
+                      externalMetadataColumnId="Package\lea los registros de bd y páselos a archivos\Archivo 3.Inputs[Entrada de destino de archivo plano].ExternalColumns[PersonType]"
+                      lineageId="Package\lea los registros de bd y páselos a archivos\Lea las personas.Outputs[Salida de origen de OLE DB].Columns[PersonType]" />
+                    <inputColumn
+                      refId="Package\lea los registros de bd y páselos a archivos\Archivo 3.Inputs[Entrada de destino de archivo plano].Columns[Name]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Name"
+                      externalMetadataColumnId="Package\lea los registros de bd y páselos a archivos\Archivo 3.Inputs[Entrada de destino de archivo plano].ExternalColumns[Name]"
+                      lineageId="Package\lea los registros de bd y páselos a archivos\Lea las personas.Outputs[Salida de origen de OLE DB].Columns[Name]" />
+                    <inputColumn
+                      refId="Package\lea los registros de bd y páselos a archivos\Archivo 3.Inputs[Entrada de destino de archivo plano].Columns[LastName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="LastName"
+                      externalMetadataColumnId="Package\lea los registros de bd y páselos a archivos\Archivo 3.Inputs[Entrada de destino de archivo plano].ExternalColumns[LastName]"
+                      lineageId="Package\lea los registros de bd y páselos a archivos\Lea las personas.Outputs[Salida de origen de OLE DB].Columns[LastName]" />
+                    <inputColumn
+                      refId="Package\lea los registros de bd y páselos a archivos\Archivo 3.Inputs[Entrada de destino de archivo plano].Columns[NombreAnsi]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="NombreAnsi"
+                      externalMetadataColumnId="Package\lea los registros de bd y páselos a archivos\Archivo 3.Inputs[Entrada de destino de archivo plano].ExternalColumns[NombreAnsi]"
+                      lineageId="Package\lea los registros de bd y páselos a archivos\Pasar el nombre y el apellido a mayúsculas.Outputs[Salida de columna derivada].Columns[NombreAnsi]" />
+                    <inputColumn
+                      refId="Package\lea los registros de bd y páselos a archivos\Archivo 3.Inputs[Entrada de destino de archivo plano].Columns[ApellidoAnsi]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ApellidoAnsi"
+                      externalMetadataColumnId="Package\lea los registros de bd y páselos a archivos\Archivo 3.Inputs[Entrada de destino de archivo plano].ExternalColumns[ApellidoAnsi]"
+                      lineageId="Package\lea los registros de bd y páselos a archivos\Pasar el nombre y el apellido a mayúsculas.Outputs[Salida de columna derivada].Columns[ApellidoAnsi]" />
+                    <inputColumn
+                      refId="Package\lea los registros de bd y páselos a archivos\Archivo 3.Inputs[Entrada de destino de archivo plano].Columns[InicialDelApellido]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="InicialDelApellido"
+                      externalMetadataColumnId="Package\lea los registros de bd y páselos a archivos\Archivo 3.Inputs[Entrada de destino de archivo plano].ExternalColumns[InicialDelApellido]"
+                      lineageId="Package\lea los registros de bd y páselos a archivos\Obtenga la inicial del apellido.Outputs[Salida de columna derivada].Columns[InicialDelApellido]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\lea los registros de bd y páselos a archivos\Archivo 3.Inputs[Entrada de destino de archivo plano].ExternalColumns[PersonType]"
+                      dataType="wstr"
+                      length="2"
+                      name="PersonType" />
+                    <externalMetadataColumn
+                      refId="Package\lea los registros de bd y páselos a archivos\Archivo 3.Inputs[Entrada de destino de archivo plano].ExternalColumns[Name]"
+                      dataType="wstr"
+                      length="50"
+                      name="Name" />
+                    <externalMetadataColumn
+                      refId="Package\lea los registros de bd y páselos a archivos\Archivo 3.Inputs[Entrada de destino de archivo plano].ExternalColumns[LastName]"
+                      dataType="wstr"
+                      length="50"
+                      name="LastName" />
+                    <externalMetadataColumn
+                      refId="Package\lea los registros de bd y páselos a archivos\Archivo 3.Inputs[Entrada de destino de archivo plano].ExternalColumns[NombreAnsi]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="NombreAnsi" />
+                    <externalMetadataColumn
+                      refId="Package\lea los registros de bd y páselos a archivos\Archivo 3.Inputs[Entrada de destino de archivo plano].ExternalColumns[ApellidoAnsi]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ApellidoAnsi" />
+                    <externalMetadataColumn
+                      refId="Package\lea los registros de bd y páselos a archivos\Archivo 3.Inputs[Entrada de destino de archivo plano].ExternalColumns[InicialDelApellido]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="InicialDelApellido" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\lea los registros de bd y páselos a archivos\Bifurque al archivo que corresponde"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="División condicional;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Enruta filas de datos a diferentes salidas según el contenido de los datos. Se usan condiciones (expresiones de SSIS) para especificar las filas que se van a enrutar. Por ejemplo, se usa para separar los registros que deben limpiarse de los registros listos para ser cargados o para enrutar solamente un subconjunto de registros."
+              name="Bifurque al archivo que corresponde"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\lea los registros de bd y páselos a archivos\Bifurque al archivo que corresponde.Inputs[Entrada de división condicional]"
+                  description="Entrada en la transformación División condicional"
+                  name="Entrada de división condicional">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\lea los registros de bd y páselos a archivos\Bifurque al archivo que corresponde.Inputs[Entrada de división condicional].Columns[InicialDelApellido]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="InicialDelApellido"
+                      lineageId="Package\lea los registros de bd y páselos a archivos\Obtenga la inicial del apellido.Outputs[Salida de columna derivada].Columns[InicialDelApellido]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\lea los registros de bd y páselos a archivos\Bifurque al archivo que corresponde.Outputs[De la A a laF]"
+                  description="Salida 1 de la transformación División condicional"
+                  errorOrTruncationOperation="Cálculo"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="De la A a laF"
+                  synchronousInputId="Package\lea los registros de bd y páselos a archivos\Bifurque al archivo que corresponde.Inputs[Entrada de división condicional]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica la expresión. Esta versión de expresión usa identificadores de linaje en lugar de nombres de columna."
+                      name="Expression">#{Package\lea los registros de bd y páselos a archivos\Obtenga la inicial del apellido.Outputs[Salida de columna derivada].Columns[InicialDelApellido]} &lt;= @[User::miPrimerQuiebre]</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica la versión descriptiva de la expresión. Esta versión de expresión usa nombres de columna."
+                      expressionType="Notify"
+                      name="FriendlyExpression">InicialDelApellido &lt;= @[User::miPrimerQuiebre]</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica la posición de la condición en la lista de condiciones que evalúa la transformación. El orden de evaluación es del menor al mayor valor."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\lea los registros de bd y páselos a archivos\Bifurque al archivo que corresponde.Outputs[De la G a la R]"
+                  description="Salida 2 de la transformación División condicional"
+                  errorOrTruncationOperation="Cálculo"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="De la G a la R"
+                  synchronousInputId="Package\lea los registros de bd y páselos a archivos\Bifurque al archivo que corresponde.Inputs[Entrada de división condicional]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica la expresión. Esta versión de expresión usa identificadores de linaje en lugar de nombres de columna."
+                      name="Expression">@[User::miInicioSegundoQuiere] &lt;= #{Package\lea los registros de bd y páselos a archivos\Obtenga la inicial del apellido.Outputs[Salida de columna derivada].Columns[InicialDelApellido]} &amp;&amp; #{Package\lea los registros de bd y páselos a archivos\Obtenga la inicial del apellido.Outputs[Salida de columna derivada].Columns[InicialDelApellido]} &lt;= @[User::miFinalSegundoQuiebre]</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica la versión descriptiva de la expresión. Esta versión de expresión usa nombres de columna."
+                      expressionType="Notify"
+                      name="FriendlyExpression">@[User::miInicioSegundoQuiere] &lt;= InicialDelApellido &amp;&amp; InicialDelApellido &lt;= @[User::miFinalSegundoQuiebre]</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica la posición de la condición en la lista de condiciones que evalúa la transformación. El orden de evaluación es del menor al mayor valor."
+                      name="EvaluationOrder">1</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\lea los registros de bd y páselos a archivos\Bifurque al archivo que corresponde.Outputs[De la S en adelante]"
+                  description="Salida predeterminada de la transformación División condicional"
+                  exclusionGroup="1"
+                  name="De la S en adelante"
+                  synchronousInputId="Package\lea los registros de bd y páselos a archivos\Bifurque al archivo que corresponde.Inputs[Entrada de división condicional]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\lea los registros de bd y páselos a archivos\Bifurque al archivo que corresponde.Outputs[Salida de error de división condicional]"
+                  description="Salida de error de la transformación División condicional"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de división condicional"
+                  synchronousInputId="Package\lea los registros de bd y páselos a archivos\Bifurque al archivo que corresponde.Inputs[Entrada de división condicional]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\lea los registros de bd y páselos a archivos\Bifurque al archivo que corresponde.Outputs[Salida de error de división condicional].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\lea los registros de bd y páselos a archivos\Bifurque al archivo que corresponde.Outputs[Salida de error de división condicional].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\lea los registros de bd y páselos a archivos\Bifurque al archivo que corresponde.Outputs[Salida de error de división condicional].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\lea los registros de bd y páselos a archivos\Bifurque al archivo que corresponde.Outputs[Salida de error de división condicional].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\lea los registros de bd y páselos a archivos\Cuente filas del archivo 1"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Recuento de filas;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Cuenta las filas a medida que pasan por un flujo de datos. Por ejemplo, se usa el número de filas procesadas para determinar si deben o no realizarse operaciones de limpieza o actualizar el texto de un mensaje de correo electrónico para comunicar el estado de procesamiento."
+              name="Cuente filas del archivo 1">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el recuento de filas."
+                  name="VariableName">User::TotalArchivo1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\lea los registros de bd y páselos a archivos\Cuente filas del archivo 1.Inputs[Entrada de Recuento de filas 1]"
+                  hasSideEffects="true"
+                  name="Entrada de Recuento de filas 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\lea los registros de bd y páselos a archivos\Cuente filas del archivo 1.Outputs[Salida de Recuento de filas 1]"
+                  name="Salida de Recuento de filas 1"
+                  synchronousInputId="Package\lea los registros de bd y páselos a archivos\Cuente filas del archivo 1.Inputs[Entrada de Recuento de filas 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\lea los registros de bd y páselos a archivos\Lea las personas"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
+              description="Origen de OLE DB"
+              name="Lea las personas"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT        PersonType, FirstName, LastName
+FROM            Person.Person AS p
+WHERE        (PersonType = ?)</property>
+                <property
+                  dataType="System.String"
+                  description="Variable que contiene el comando SQL para ejecutar."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="Asignaciones entre los parámetros del comando SQL y las variables."
+                  name="ParameterMapping">"Parameter0:Input",{3D35FD62-04E1-49A6-84A0-A69F94AB4704};</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\lea los registros de bd y páselos a archivos\Lea las personas.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.AdventureWorks2012]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.AdventureWorks2012]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\lea los registros de bd y páselos a archivos\Lea las personas.Outputs[Salida de origen de OLE DB]"
+                  name="Salida de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\lea los registros de bd y páselos a archivos\Lea las personas.Outputs[Salida de origen de OLE DB].Columns[PersonType]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\lea los registros de bd y páselos a archivos\Lea las personas.Outputs[Salida de origen de OLE DB].ExternalColumns[PersonType]"
+                      length="2"
+                      lineageId="Package\lea los registros de bd y páselos a archivos\Lea las personas.Outputs[Salida de origen de OLE DB].Columns[PersonType]"
+                      name="PersonType"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\lea los registros de bd y páselos a archivos\Lea las personas.Outputs[Salida de origen de OLE DB].Columns[Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\lea los registros de bd y páselos a archivos\Lea las personas.Outputs[Salida de origen de OLE DB].ExternalColumns[FirstName]"
+                      length="50"
+                      lineageId="Package\lea los registros de bd y páselos a archivos\Lea las personas.Outputs[Salida de origen de OLE DB].Columns[Name]"
+                      name="Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\lea los registros de bd y páselos a archivos\Lea las personas.Outputs[Salida de origen de OLE DB].Columns[LastName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\lea los registros de bd y páselos a archivos\Lea las personas.Outputs[Salida de origen de OLE DB].ExternalColumns[LastName]"
+                      length="50"
+                      lineageId="Package\lea los registros de bd y páselos a archivos\Lea las personas.Outputs[Salida de origen de OLE DB].Columns[LastName]"
+                      name="LastName"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\lea los registros de bd y páselos a archivos\Lea las personas.Outputs[Salida de origen de OLE DB].ExternalColumns[PersonType]"
+                      dataType="wstr"
+                      length="2"
+                      name="PersonType" />
+                    <externalMetadataColumn
+                      refId="Package\lea los registros de bd y páselos a archivos\Lea las personas.Outputs[Salida de origen de OLE DB].ExternalColumns[FirstName]"
+                      dataType="wstr"
+                      length="50"
+                      name="FirstName" />
+                    <externalMetadataColumn
+                      refId="Package\lea los registros de bd y páselos a archivos\Lea las personas.Outputs[Salida de origen de OLE DB].ExternalColumns[LastName]"
+                      dataType="wstr"
+                      length="50"
+                      name="LastName" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\lea los registros de bd y páselos a archivos\Lea las personas.Outputs[Salida de error de origen de OLE DB]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\lea los registros de bd y páselos a archivos\Lea las personas.Outputs[Salida de error de origen de OLE DB].Columns[PersonType]"
+                      dataType="wstr"
+                      length="2"
+                      lineageId="Package\lea los registros de bd y páselos a archivos\Lea las personas.Outputs[Salida de error de origen de OLE DB].Columns[PersonType]"
+                      name="PersonType" />
+                    <outputColumn
+                      refId="Package\lea los registros de bd y páselos a archivos\Lea las personas.Outputs[Salida de error de origen de OLE DB].Columns[FirstName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\lea los registros de bd y páselos a archivos\Lea las personas.Outputs[Salida de error de origen de OLE DB].Columns[FirstName]"
+                      name="FirstName" />
+                    <outputColumn
+                      refId="Package\lea los registros de bd y páselos a archivos\Lea las personas.Outputs[Salida de error de origen de OLE DB].Columns[LastName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\lea los registros de bd y páselos a archivos\Lea las personas.Outputs[Salida de error de origen de OLE DB].Columns[LastName]"
+                      name="LastName" />
+                    <outputColumn
+                      refId="Package\lea los registros de bd y páselos a archivos\Lea las personas.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\lea los registros de bd y páselos a archivos\Lea las personas.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\lea los registros de bd y páselos a archivos\Lea las personas.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\lea los registros de bd y páselos a archivos\Lea las personas.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\lea los registros de bd y páselos a archivos\Obtenga la inicial del apellido"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Columna derivada;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Crea nuevos valores de columna aplicando expresiones a las columnas de entrada de la transformación. Crea nuevas columnas o sobrescribe las columnas existentes. Por ejemplo, se concatenan los valores de las columnas 'nombre' y 'apellidos' para crear una columna 'nombre completo'."
+              name="Obtenga la inicial del apellido"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\lea los registros de bd y páselos a archivos\Obtenga la inicial del apellido.Inputs[Entrada de columna derivada]"
+                  description="Entrada en la transformación Columna derivada"
+                  name="Entrada de columna derivada">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\lea los registros de bd y páselos a archivos\Obtenga la inicial del apellido.Inputs[Entrada de columna derivada].Columns[ApellidoAnsi]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ApellidoAnsi"
+                      lineageId="Package\lea los registros de bd y páselos a archivos\Pasar el nombre y el apellido a mayúsculas.Outputs[Salida de columna derivada].Columns[ApellidoAnsi]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\lea los registros de bd y páselos a archivos\Obtenga la inicial del apellido.Outputs[Salida de columna derivada]"
+                  description="Salida predeterminada de la transformación Columna derivada"
+                  exclusionGroup="1"
+                  name="Salida de columna derivada"
+                  synchronousInputId="Package\lea los registros de bd y páselos a archivos\Obtenga la inicial del apellido.Inputs[Entrada de columna derivada]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\lea los registros de bd y páselos a archivos\Obtenga la inicial del apellido.Outputs[Salida de columna derivada].Columns[InicialDelApellido]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Cálculo"
+                      errorRowDisposition="FailComponent"
+                      length="1"
+                      lineageId="Package\lea los registros de bd y páselos a archivos\Obtenga la inicial del apellido.Outputs[Salida de columna derivada].Columns[InicialDelApellido]"
+                      name="InicialDelApellido"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión de columna derivada"
+                          name="Expression">(DT_STR,1,1252)[LEFT](#{Package\lea los registros de bd y páselos a archivos\Pasar el nombre y el apellido a mayúsculas.Outputs[Salida de columna derivada].Columns[ApellidoAnsi]},1)</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión descriptiva de columna derivada"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,1,1252)LEFT(ApellidoAnsi,1)</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\lea los registros de bd y páselos a archivos\Obtenga la inicial del apellido.Outputs[Salida de error de columna derivada]"
+                  description="Salida de error de la transformación Columna derivada"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de columna derivada"
+                  synchronousInputId="Package\lea los registros de bd y páselos a archivos\Obtenga la inicial del apellido.Inputs[Entrada de columna derivada]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\lea los registros de bd y páselos a archivos\Obtenga la inicial del apellido.Outputs[Salida de error de columna derivada].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\lea los registros de bd y páselos a archivos\Obtenga la inicial del apellido.Outputs[Salida de error de columna derivada].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\lea los registros de bd y páselos a archivos\Obtenga la inicial del apellido.Outputs[Salida de error de columna derivada].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\lea los registros de bd y páselos a archivos\Obtenga la inicial del apellido.Outputs[Salida de error de columna derivada].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\lea los registros de bd y páselos a archivos\Pasar el nombre y el apellido a mayúsculas"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Columna derivada;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Crea nuevos valores de columna aplicando expresiones a las columnas de entrada de la transformación. Crea nuevas columnas o sobrescribe las columnas existentes. Por ejemplo, se concatenan los valores de las columnas 'nombre' y 'apellidos' para crear una columna 'nombre completo'."
+              name="Pasar el nombre y el apellido a mayúsculas"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\lea los registros de bd y páselos a archivos\Pasar el nombre y el apellido a mayúsculas.Inputs[Entrada de columna derivada]"
+                  description="Entrada en la transformación Columna derivada"
+                  name="Entrada de columna derivada">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\lea los registros de bd y páselos a archivos\Pasar el nombre y el apellido a mayúsculas.Inputs[Entrada de columna derivada].Columns[Name]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Name"
+                      lineageId="Package\lea los registros de bd y páselos a archivos\Lea las personas.Outputs[Salida de origen de OLE DB].Columns[Name]" />
+                    <inputColumn
+                      refId="Package\lea los registros de bd y páselos a archivos\Pasar el nombre y el apellido a mayúsculas.Inputs[Entrada de columna derivada].Columns[LastName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="LastName"
+                      lineageId="Package\lea los registros de bd y páselos a archivos\Lea las personas.Outputs[Salida de origen de OLE DB].Columns[LastName]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\lea los registros de bd y páselos a archivos\Pasar el nombre y el apellido a mayúsculas.Outputs[Salida de columna derivada]"
+                  description="Salida predeterminada de la transformación Columna derivada"
+                  exclusionGroup="1"
+                  name="Salida de columna derivada"
+                  synchronousInputId="Package\lea los registros de bd y páselos a archivos\Pasar el nombre y el apellido a mayúsculas.Inputs[Entrada de columna derivada]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\lea los registros de bd y páselos a archivos\Pasar el nombre y el apellido a mayúsculas.Outputs[Salida de columna derivada].Columns[NombreAnsi]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Cálculo"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\lea los registros de bd y páselos a archivos\Pasar el nombre y el apellido a mayúsculas.Outputs[Salida de columna derivada].Columns[NombreAnsi]"
+                      name="NombreAnsi"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión de columna derivada"
+                          name="Expression">(DT_STR,50,1252)[UPPER](#{Package\lea los registros de bd y páselos a archivos\Lea las personas.Outputs[Salida de origen de OLE DB].Columns[Name]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión descriptiva de columna derivada"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,50,1252)UPPER(Name)</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\lea los registros de bd y páselos a archivos\Pasar el nombre y el apellido a mayúsculas.Outputs[Salida de columna derivada].Columns[ApellidoAnsi]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Cálculo"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\lea los registros de bd y páselos a archivos\Pasar el nombre y el apellido a mayúsculas.Outputs[Salida de columna derivada].Columns[ApellidoAnsi]"
+                      name="ApellidoAnsi"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión de columna derivada"
+                          name="Expression">(DT_STR,50,1252)[UPPER](#{Package\lea los registros de bd y páselos a archivos\Lea las personas.Outputs[Salida de origen de OLE DB].Columns[LastName]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión descriptiva de columna derivada"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,50,1252)UPPER(LastName)</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\lea los registros de bd y páselos a archivos\Pasar el nombre y el apellido a mayúsculas.Outputs[Salida de error de columna derivada]"
+                  description="Salida de error de la transformación Columna derivada"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de columna derivada"
+                  synchronousInputId="Package\lea los registros de bd y páselos a archivos\Pasar el nombre y el apellido a mayúsculas.Inputs[Entrada de columna derivada]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\lea los registros de bd y páselos a archivos\Pasar el nombre y el apellido a mayúsculas.Outputs[Salida de error de columna derivada].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\lea los registros de bd y páselos a archivos\Pasar el nombre y el apellido a mayúsculas.Outputs[Salida de error de columna derivada].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\lea los registros de bd y páselos a archivos\Pasar el nombre y el apellido a mayúsculas.Outputs[Salida de error de columna derivada].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\lea los registros de bd y páselos a archivos\Pasar el nombre y el apellido a mayúsculas.Outputs[Salida de error de columna derivada].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\lea los registros de bd y páselos a archivos.Paths[De la A a laF]"
+              endId="Package\lea los registros de bd y páselos a archivos\Cuente filas del archivo 1.Inputs[Entrada de Recuento de filas 1]"
+              name="De la A a laF"
+              startId="Package\lea los registros de bd y páselos a archivos\Bifurque al archivo que corresponde.Outputs[De la A a laF]" />
+            <path
+              refId="Package\lea los registros de bd y páselos a archivos.Paths[De la G a la R]"
+              endId="Package\lea los registros de bd y páselos a archivos\Archivo 2.Inputs[Entrada de destino de archivo plano]"
+              name="De la G a la R"
+              startId="Package\lea los registros de bd y páselos a archivos\Bifurque al archivo que corresponde.Outputs[De la G a la R]" />
+            <path
+              refId="Package\lea los registros de bd y páselos a archivos.Paths[De la S en adelante]"
+              endId="Package\lea los registros de bd y páselos a archivos\Archivo 3.Inputs[Entrada de destino de archivo plano]"
+              name="De la S en adelante"
+              startId="Package\lea los registros de bd y páselos a archivos\Bifurque al archivo que corresponde.Outputs[De la S en adelante]" />
+            <path
+              refId="Package\lea los registros de bd y páselos a archivos.Paths[Salida de columna derivada]"
+              endId="Package\lea los registros de bd y páselos a archivos\Obtenga la inicial del apellido.Inputs[Entrada de columna derivada]"
+              name="Salida de columna derivada"
+              startId="Package\lea los registros de bd y páselos a archivos\Pasar el nombre y el apellido a mayúsculas.Outputs[Salida de columna derivada]" />
+            <path
+              refId="Package\lea los registros de bd y páselos a archivos.Paths[Salida de columna derivada1]"
+              endId="Package\lea los registros de bd y páselos a archivos\Bifurque al archivo que corresponde.Inputs[Entrada de división condicional]"
+              name="Salida de columna derivada"
+              startId="Package\lea los registros de bd y páselos a archivos\Obtenga la inicial del apellido.Outputs[Salida de columna derivada]" />
+            <path
+              refId="Package\lea los registros de bd y páselos a archivos.Paths[Salida de origen de OLE DB]"
+              endId="Package\lea los registros de bd y páselos a archivos\Pasar el nombre y el apellido a mayúsculas.Inputs[Entrada de columna derivada]"
+              name="Salida de origen de OLE DB"
+              startId="Package\lea los registros de bd y páselos a archivos\Lea las personas.Outputs[Salida de origen de OLE DB]" />
+            <path
+              refId="Package\lea los registros de bd y páselos a archivos.Paths[Salida de Recuento de filas 1]"
+              endId="Package\lea los registros de bd y páselos a archivos\Archivo 1.Inputs[Entrada de destino de archivo plano]"
+              name="Salida de Recuento de filas 1"
+              startId="Package\lea los registros de bd y páselos a archivos\Cuente filas del archivo 1.Outputs[Salida de Recuento de filas 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Pausa"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:DTSID="{8A4DFC7F-D959-4C8E-96C4-BD643897EDAB}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Pausa"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{92A1F723-A30B-4CF8-8CAA-E989A8EEE896}"
+      DTS:From="Package\lea los registros de bd y páselos a archivos"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Pausa" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="281,42"
+          Id="Package\lea los registros de bd y páselos a archivos"
+          TopLeft="436,68" />
+        <NodeLayout
+          Size="107,42"
+          Id="Package\Pausa"
+          TopLeft="498.571428571429,163.571428571429" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="576.5,110">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-24.4285714285714,53.5714285714286"
+              Start="0,0"
+              End="-24.4285714285714,46.0714285714286">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.7857142857143" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.7857142857143"
+                    Point2="0,26.7857142857143"
+                    Point3="-4,26.7857142857143" />
+                  <mssgle:LineSegment
+                    End="-20.4285714285714,26.7857142857143" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-20.4285714285714,26.7857142857143"
+                    Point2="-24.4285714285714,26.7857142857143"
+                    Point3="-24.4285714285714,30.7857142857143" />
+                  <mssgle:LineSegment
+                    End="-24.4285714285714,46.0714285714286" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\lea los registros de bd y páselos a archivos">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="123,42"
+          Id="Package\lea los registros de bd y páselos a archivos\Archivo 2"
+          TopLeft="370,406.923076923077" />
+        <NodeLayout
+          Size="249,42"
+          Id="Package\lea los registros de bd y páselos a archivos\Bifurque al archivo que corresponde"
+          TopLeft="296.923076923077,310" />
+        <NodeLayout
+          Size="123,42"
+          Id="Package\lea los registros de bd y páselos a archivos\Archivo 3"
+          TopLeft="635.384615384615,419.230769230769" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\lea los registros de bd y páselos a archivos\Lea las personas"
+          TopLeft="342.153846153846,15.2307692307692" />
+        <NodeLayout
+          Size="281,42"
+          Id="Package\lea los registros de bd y páselos a archivos\Pasar el nombre y el apellido a mayúsculas"
+          TopLeft="279.230769230769,117.692307692308" />
+        <NodeLayout
+          Size="123,42"
+          Id="Package\lea los registros de bd y páselos a archivos\Archivo 1"
+          TopLeft="134.615384615385,573.846153846153" />
+        <NodeLayout
+          Size="217,42"
+          Id="Package\lea los registros de bd y páselos a archivos\Obtenga la inicial del apellido"
+          TopLeft="305.384615384615,213.846153846154" />
+        <EdgeLayout
+          Id="Package\lea los registros de bd y páselos a archivos.Paths[Salida de origen de OLE DB]"
+          TopLeft="420.192307692308,57.2307692307692">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.4615384615384"
+              Start="0,0"
+              End="0,52.9615384615384">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.9615384615384" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\lea los registros de bd y páselos a archivos.Paths[Salida de columna derivada1]"
+          TopLeft="417.653846153846,255.846153846154">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,54.1538461538462"
+              Start="0,0"
+              End="0,46.6538461538462">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.6538461538462" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\lea los registros de bd y páselos a archivos.Paths[Salida de columna derivada]"
+          TopLeft="416.807692307692,159.692307692308">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,54.1538461538462"
+              Start="0,0"
+              End="0,46.6538461538462">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.6538461538462" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\lea los registros de bd y páselos a archivos.Paths[De la S en adelante]"
+          TopLeft="461.589743589744,352">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="235.294871794872,67.2307692307692"
+              Start="0,0"
+              End="235.294871794872,59.7307692307692">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.1498557308613" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.1498557308613"
+                    Point2="0,27.1498557308613"
+                    Point3="4,27.1498557308613" />
+                  <mssgle:LineSegment
+                    End="231.294871794872,27.1498557308613" />
+                  <mssgle:CubicBezierSegment
+                    Point1="231.294871794872,27.1498557308613"
+                    Point2="235.294871794872,27.1498557308613"
+                    Point3="235.294871794872,31.1498557308613" />
+                  <mssgle:LineSegment
+                    End="235.294871794872,59.7307692307692" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="74.0110882411859,32.1498557308613,87.2726953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\lea los registros de bd y páselos a archivos.Paths[De la G a la R]"
+          TopLeft="421.423076923077,352">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="10.076923076923,54.9230769230769"
+              Start="0,0"
+              End="10.076923076923,47.4230769230769">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.4615384615385" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.4615384615385"
+                    Point2="0,27.4615384615385"
+                    Point3="4,27.4615384615385" />
+                  <mssgle:LineSegment
+                    End="6.07692307692304,27.4615384615385" />
+                  <mssgle:CubicBezierSegment
+                    Point1="6.07692307692304,27.4615384615385"
+                    Point2="10.076923076923,27.4615384615385"
+                    Point3="10.076923076923,31.4615384615385" />
+                  <mssgle:LineSegment
+                    End="10.076923076923,47.4230769230769" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-26.1214798677885,32.4615384615385,62.3198828125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="198,42"
+          Id="Package\lea los registros de bd y páselos a archivos\Cuente filas del archivo 1"
+          TopLeft="120.769230769231,453.076923076923" />
+        <EdgeLayout
+          Id="Package\lea los registros de bd y páselos a archivos.Paths[De la A a laF]"
+          TopLeft="361.173076923077,352">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-141.403846153846,101.076923076923"
+              Start="0,0"
+              End="-141.403846153846,93.576923076923">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.406316861946" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30.406316861946"
+                    Point2="0,34.406316861946"
+                    Point3="-4,34.406316861946" />
+                  <mssgle:LineSegment
+                    End="-137.403846153846,34.406316861946" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-137.403846153846,34.406316861946"
+                    Point2="-141.403846153846,34.406316861946"
+                    Point3="-141.403846153846,38.406316861946" />
+                  <mssgle:LineSegment
+                    End="-141.403846153846,93.576923076923" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-99.3222160456731,39.406316861946,57.2405859375,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\lea los registros de bd y páselos a archivos.Paths[Salida de Recuento de filas 1]"
+          TopLeft="219.769230769231,495.076923076923">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-23.6538461538457,78.7692307692303"
+              Start="0,0"
+              End="-23.6538461538457,71.2692307692303">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.3846153846152" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,35.3846153846152"
+                    Point2="0,39.3846153846152"
+                    Point3="-4,39.3846153846152" />
+                  <mssgle:LineSegment
+                    End="-19.6538461538457,39.3846153846152" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-19.6538461538457,39.3846153846152"
+                    Point2="-23.6538461538457,39.3846153846152"
+                    Point3="-23.6538461538457,43.3846153846152" />
+                  <mssgle:LineSegment
+                    End="-23.6538461538457,71.2692307692303" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\lea los registros de bd y páselos a archivos\Lea las personas">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
